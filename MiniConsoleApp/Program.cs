@@ -31,31 +31,8 @@ namespace MiniConsoleApp
                 switch (chooseVal)
                 {
                     case 1:
-                        Console.Write("No: ");
-                        string no = Console.ReadLine();
-                        Console.Write("Ad: ");
-                        string name = Console.ReadLine();
 
-                        string priceStr;
-                        double price;
-                        do
-                        {
-                            Console.Write("Qiymet: ");
-                            priceStr = Console.ReadLine();
-                        } while (!double.TryParse(priceStr, out price));
-
-
-                        string countStr;
-                        int count;
-                        do
-                        {
-                            Console.Write("Say: ");
-                            countStr = Console.ReadLine();
-                        } while (!int.TryParse(countStr, out count));
-
-
-                        Product newProduct = new Product(no, name, price, count);
-                        market.AddProduct(newProduct);
+                        case1(market);
                         break;
 
 
@@ -83,6 +60,35 @@ namespace MiniConsoleApp
 
 
             }
+        }
+
+        public static void case1(Market market)
+        {
+            Console.Write("No: ");
+            string no = Console.ReadLine();
+            Console.Write("Ad: ");
+            string name = Console.ReadLine();
+
+            string priceStr;
+            double price;
+            do
+            {
+                Console.Write("Qiymet: ");
+                priceStr = Console.ReadLine();
+            } while (!double.TryParse(priceStr, out price));
+
+
+            string countStr;
+            int count;
+            do
+            {
+                Console.Write("Say: ");
+                countStr = Console.ReadLine();
+            } while (!int.TryParse(countStr, out count));
+
+
+            Product newProduct = new Product(no, name, price, count);
+            market.AddProduct(newProduct);
         }
 
 
